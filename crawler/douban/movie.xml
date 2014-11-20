@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<div id="content" >
+<div id="info" var_raw="$Info$" >
+</div>
+<span property="v:itemreviewed">$title$</span>
+<div id="review_section" class=""  >  
+<div class="mod-hd" >
+ <h2>
+ <span class="pl"  var_recursive="True">
+  <a href="$reviews$"  ></a>
+</span>
+</h2>
+
+        </div>
+</div> 
+</div>       

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<div class="article" var_recursive="True">
+	<div class=""  var_recursive="True" var_array="$movie_set$" >    
+	    <table width="100%"  var_recursive="True" >
+	    <a class="nbg" title="$title$" var_recursive="True" href="$url$"></a>
+	    </table>
+	</div>
+
+    <div class="paginator" var_recursive="True">
+    <span class="next">
+            <a href="$next$">$Nextpage$</a>
+        </span>
+        </div>
+</div>

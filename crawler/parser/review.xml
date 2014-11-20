@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+
+<div class="article">
+	<div class="" var_recursive="False" var_array="$reviews$">
+	<div class="review">
+	<a  href="$review_id$" onclick="moreurl(this, {from: ''})" class=""></a>
+	<div class="review-hd-info">
+	                <a href="$user$" class=""></a>
+	                <span class="$score$" ></span>
+	            </div>
+	</div>
+	</div>
+<div id="paginator">           
+            <a href="$next$" data-page="" class="next"></a>
+    </div>
+    	
+</div>

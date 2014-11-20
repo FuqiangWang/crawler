@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<html>
+	<div class="grid_view">
+		<ul class="" var_array="$movie_array$">
+			<li class="">
+				<a class="nbg" href="$url$"></a>
+				<div class="star clearfix" var_array="$comments$">
+					<span>$com$</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="paginator">
+		<span class="next">
+			<a href="$nextPage$"></a>
+		</span>
+	</div>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<div id="headline" class="item">
+<a class="nbg" title="$name$" ></a>
+    <div class="info" var_array="$Info$">
+<li>
+<span>$key$</span>
+        $value$
+        </li>
+    </div>
+</div>

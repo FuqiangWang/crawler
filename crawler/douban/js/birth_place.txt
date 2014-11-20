@@ -1,0 +1,543 @@
+0	中国	1875
+1	韩国	674
+2	香港	474
+3	意大利	231
+4	日本	2094
+5	美国	4690
+6	法国	571
+7	英国	1517
+8	德国	314
+9	印度	136
+10	马耳他,圣朱利安	1
+11	加拿大	506
+12	波多黎各,圣胡安	3
+13	俄罗斯	55
+14	比利时	61
+15	Wath-upon-Dearne, South Yorkshire, UK	1
+16	Örgryte, Västra Götalands län, Sweden	1
+17	奥地利	67
+18	瑞士	34
+19	台湾	373
+20	罗马尼亚	23
+21	波兰	89
+22	石川县	1
+23	爱尔兰	82
+24	瑞典	106
+25	阿根廷	53
+26	南斯拉夫,塞尔维亚,贝尔格莱德	5
+27	中美洲,伯利兹	1
+28	南斯拉夫,波斯尼亚和Hercegovina,萨拉热窝	1
+29	西班牙	185
+30	Los Angeles, California, USA	1
+31	澳大利亚	161
+32	哥伦比亚,麦德林	1
+33	芬兰	18
+34	葡萄牙,里斯本	6
+35	Bristol, England, UK	1
+36	巴西	50
+37	苏格兰,格拉斯哥	1
+38	津巴布韦	1
+39	山梨县	1
+40	墨西哥	57
+41	挪威,奥斯陆	9
+42	古巴	16
+43	智利,圣地亚哥	9
+44	福岡県北九州市	1
+45	荷兰	50
+46	阿尔巴尼亚,地拉那	1
+47	泰国	68
+48	苏联	1
+49	Jhansi, Uttar Pradesh, British India [now India]	1
+50	以色列,特拉维夫	9
+51	New Jersey,U.S.	1
+52	捷克斯洛伐克,捷克布杰约维采	1
+53	伊朗	17
+54	南非	29
+55	开曼群岛,乔治城	1
+56	Wayne, Nebraska	1
+57	匈牙利	26
+58	Manchester, England, UK	1
+59	希腊,雅典	1
+60	捷克	5
+61	首尔	5
+62	越南	4
+63	英格兰,伍斯特郡,伊夫舍姆	1
+64	Hutto Texas	1
+65	保加利亚,多布里奇	1
+66	挪威	6
+67	英格兰 萨里 埃普瑟姆	1
+68	冰岛	4
+69	Germany, Saxony, Dohna	1
+70	Tokyo, Japan	1
+71	Nanchong, Sichuan, China	1
+72	英格兰	4
+73	捷克斯洛伐克,Litomysl	1
+74	仁川 富平	1
+75	Chester, Cheshire, England, UK	1
+76	Surrey	1
+77	土耳其,伊斯坦布尔	8
+78	Trabuco Canyon, California, USA	1
+79	Beijing	1
+80	尼日利亚	1
+81	冰岛,雷克雅未克	4
+82	马来西亚	31
+83	越南,西贡	6
+84	哥伦比亚,巴兰基亚	3
+85	Scarborough, Yorkshire, England	1
+86	以色列,别是巴	1
+87	沙特阿拉伯,达兰	1
+88	Hull, England, UK	1
+89	澳门	9
+90	Gold Coast	1
+91	Bristol，England，UK	1
+92	以色列,Bnei布列克	1
+93	挪威,哈马尔	1
+94	哥伦比亚,卡利	1
+95	新加坡	28
+96	也门,亚丁	1
+97	新泽西州,恩格尔伍德	1
+98	UK, South Wales, Swansea	1
+99	洛杉矶，加利福尼亚州	1
+100	哥伦比亚麦德林	3
+101	巴哈马,拿骚	2
+102	萨尔瓦多	1
+103	黎巴嫩,贝鲁特	3
+104	捷克,布拉格	4
+105	Elmira, Ontario, Canada	1
+106	尼日利亚,拉各斯	2
+107	越南,岘港	1
+108	捷克斯洛伐克,布拉格	1
+109	越南,大叻	2
+110	釜山	2
+111	厄瓜多尔瓜亚基尔	1
+112	斯洛伐克,Staskov	1
+113	乌克兰	13
+114	希腊,莱夫卡斯	1
+115	Hamburg, Germany	1
+116	静冈县	1
+117	哈尔滨	4
+118	Filderstadt，Deutschland	1
+119	波多黎各,马亚圭斯	2
+120	斯洛伐克,布拉迪斯拉发	2
+121	坦桑尼亚	1
+122	东京都杉并区	1
+123	神奈川县	2
+124	新西兰	43
+125	菲律宾,马尼拉	2
+126	南斯拉夫,马其顿	1
+127	南斯拉夫,Vojlovica	1
+128	丹东市	1
+129	伦敦，英格兰	1
+130	土耳其,萨姆松	1
+131	Tilsit, East Prussia, Germany [now Sovetsk, Russia]	1
+132	以色列	12
+133	广州	3
+134	东京都	5
+135	保加利亚	1
+136	斯洛文尼亚,卢布尔雅那	1
+137	東京都	5
+138	USA	1
+139	泰國,曼谷	1
+140	马来亚	1
+141	挪威,Vadsø	1
+142	葡萄牙,蒙Estoril	1
+143	Taiwan	2
+144	波黑,萨拉热窝	1
+145	挪威,Levanger	1
+146	Weston, Connecticut, USA	1
+147	危地马拉	1
+148	柬埔寨,金边	1
+149	Opole, Opolskie, Poland	1
+150	丹麦	36
+151	东京	5
+152	保加利亚,舒门	1
+153	保加利亚,Karlovo	1
+154	泰國曼谷	1
+155	釜山广域市	1
+156	乌拉圭,蒙得维的亚	2
+157	土耳其安卡拉	4
+158	Ashford, Kent,English	1
+159	英格兰,多塞特,幽冥康普顿	1
+160	苏联，阿尔泰边疆区	1
+161	奥匈帝国	1
+162	Barnet, Greater London, England	1
+163	苏丹	1
+164	尼泊尔,加德满都	1
+165	台灣宜蘭	1
+166	塔西提	1
+167	千叶县	1
+168	安哥拉。罗安达	1
+169		6
+170	克罗地亚,斯普利特	1
+171	土耳其,梅尔辛	1
+172	以色列,耶路撒冷	4
+173	哥伦比亚,考卡,波帕扬	1
+174	Leningrad, Soviet Union [now Saint-Peterburg, Russia]	1
+175	委内瑞拉,瓜希拉	1
+176	England,Manchester,Didsbury	1
+177	突尼斯,迦太基	1
+178	苏联,鞑靼斯坦,喀山	1
+179	St. Louis, Missouri	1
+180	克罗地亚,奥西耶克	1
+181	立陶宛,希奥利艾	1
+182	Glasgow, Scotland	2
+183	圭亚那	1
+184	塞内加尔达喀尔	1
+185	Bray, Co. Wicklow, Republic of Ireland	1
+186	海参崴	1
+187	南斯拉夫,塞尔维亚,Mladenovac	1
+188	柬埔寨	1
+189	南斯拉夫,塞尔维亚,克拉列沃	1
+190	海地,圣马克	1
+191	波多黎各,乌马考	1
+192	亚美尼亚,叶里温 ‎	1
+193	肯尼亚	2
+194	秘鲁,阿亚库乔,Huanta	1
+195	蔚山广域市	1
+196	多米尼加共和国,圣多明各	1
+197	秘鲁,特鲁希略	1
+198	New Longton, South Ribble, England	1
+199	波多黎各	3
+200	贝宁,科托努	1
+201	达姆施塔特	1
+202	克罗地亚	2
+203	兰开夏郡，洛奇代尔	1
+204	Catania, Italy	1
+205	委内瑞拉,加拉加斯	2
+206	秘鲁,利马	2
+207	Rome，Italy	1
+208	Hackney, London, England	1
+209	英格兰,西米德兰兹郡,伍尔弗汉普顿	1
+210	纽约市	1
+211	埃及	4
+212	Vancouver, British Columbia, Canada	1
+213	大阪府	1
+214	London 伦敦	1
+215	菲律宾	3
+216	哥伦比亚,波哥大	3
+217	捷克,利贝雷茨	1
+218	巴基斯坦,旁遮普邦,拉合尔	1
+219	Tizi Ouzou, Algiers	1
+220	DUBLIN	1
+221	葡萄牙	1
+222	Scone，Perth，Scotland	1
+223	塞尔维亚,贝尔格莱德	5
+224	阿尔及利亚	3
+225	摩洛哥卡萨布兰卡	4
+226	Matadepera, Barcelona, Catalonia, Spain	1
+227	土耳其,哈克利	1
+228	New Brunswick, Canada	1
+229	立陶宛,Liepynai	1
+230	苏联,莫斯科地区,加里宁格勒	1
+231	韓國	1
+232	Leeds, Yorkshire, England, UK	1
+233	斯洛伐克,撒拉	1
+234	智利,托科皮亚	1
+235	Wuhan, Hubei, China	1
+236	Prétot-Vicquemare, Seine-Inférieure [now Seine-Maritime], France	1
+237	London, England, UK	1
+238	英格兰,南约克郡,唐卡斯特	1
+239	土耳其,锡瓦斯	2
+240	内罗毕, 肯尼亚	1
+241	South Korea	1
+242	France,Yvelines,Le Pecq	1
+243	Rockwall, Texas	1
+244	挪威,斯塔万格	1
+245	阿尔及利亚,阿尔及尔	3
+246	南斯拉夫,塞尔维亚	1
+247	以色列,Herzlia	1
+248	美國, Michigan,Grosse Pointe Park	1
+249	土耳其,伊兹密尔	2
+250	新泻県	1
+251	Sofia	1
+252	Birmingham, England, UK	1
+253	Kristiansand, Norway	1
+254	Nayarit, Mexico	1
+255	Mexico City, Distrito Federal, Mexico	1
+256	England	2
+257	伦敦	3
+258	摩洛哥,乌季达	1
+259	牙买加,金斯敦	1
+260	[苏联]哈萨克斯坦, 杰兹卡兹甘	1
+261	前苏联,Svetly	1
+262	Aberdeenshire	1
+263	科特迪瓦,阿比让	1
+264	巴格达	1
+265	捷克,Trebíc	1
+266	马耳他	1
+267	Ramat Gan	1
+268	南斯拉夫贝尔格莱德	5
+269	沈阳	3
+270	前苏联,拉脱维亚,里加	1
+271	摩洛哥,拉巴特	2
+272	拉脱维亚,里加	1
+273	仁川	1
+274	New Canaan, Connecticut, USA	1
+275	石家庄	1
+276	索马里	1
+277	Iowa City, Iowa	1
+278	Worthing, Sussex, England, UK	1
+279	苏联,莫斯科	3
+280	阿尔及利亚,阿尔及尔,圣尤金	1
+281	土耳其,Cilder	1
+282	菲律宾,巴科洛德市	1
+283	Santa Monica, California, USA	1
+284	南斯拉夫,塞尔维亚,Vrdnik	1
+285	挪威,桑讷菲尤尔	1
+286	爱沙尼亚,塔林	2
+287	塞尔维亚	1
+288	Kaohsuing, Taiwan	1
+289	福岡	1
+290	台州	1
+291	Swedish	1
+292	西尔维亚	1
+293	1987-01-24	1
+294	光州	1
+295	江原道平昌	1
+296	东京都品川区	1
+297	Bournemouth, Dorset, England, UK	1
+298	Paris, France	1
+299	台灣雲林	1
+300	Aberystwyth, Wales, UK	1
+301	Chicago	2
+302	立陶宛, 维尔纽斯	1
+303	英格兰,白金汉郡	1
+304	克罗地亚扎达尔	1
+305	Luton, Bedfordshire, England, UK	1
+306	東京生まれの沖縄育ち	1
+307	Zlín, Protectorate Bohemia and Moravia [now Czech Republic]	1
+308	Twickenham, United Kingdom	1
+309	爱达荷州博伊西	1
+310	東京都八王子市	1
+311	大阪府大阪市	1
+312	南斯拉夫,塞尔维亚,格尼拉内	1
+313	New Jersey	1
+314	斯里兰卡	1
+315	突尼斯	2
+316	Penkridge, Staffordshire, England, UK	1
+317	Karlovy Vary, Czechoslovakia	1
+318	Halifax, Nova Scotia, Canada	1
+319	Saint Paul, Minnesota	1
+320	King George,Virginia,USA	1
+321	Redding, Connecticut, U.S.	1
+322	Oita, Japan	1
+323	德克萨斯的休斯顿	1
+324	老挝	1
+325	Broome, Western Australia.	1
+326	卢森堡	1
+327	巴拿马	1
+328	兵库县	2
+329	蒙古	1
+330	London, England	1
+331	Carter Wallace MacIntyre Atlanta, Georgia, U.S.	1
+332	Montreuil, Seine [now Seine-Saint-Denis], France	1
+333	菲律宾三描礼士省苏比克湾 Subic Bay, Zambales, Philippines	1
+334	土耳其，阿克何萨尔	1
+335	南韓釜山	1
+336	南斯拉夫,克罗地亚,希贝尼克	1
+337	波多黎各,桑图尔塞	3
+338	Pocheon, Gyeonggi-do, South Korea	1
+339	希腊,约阿尼纳,Klimatia	1
+340	Beijing, China	2
+341	巴拿马,巴拿马城	3
+342	以色列,罗什艾因	1
+343	南斯拉夫,塞尔维亚,泽蒙	3
+344	苏联，塔吉克斯坦共和国，杜尚别市	1
+345	阿尔及利亚,西迪贝勒阿巴斯	1
+346	New York	1
+347	Scunthorpe, Lincolnshire, England, UK	1
+348	菲律宾,克拉克空军基地	1
+349	台灣,宜蘭縣,南澳鄉	1
+350	烟台	1
+351	茨城県古河市	1
+352	Bordeaux, France	1
+353	苏联,摩尔多瓦苏维埃社会主义共和国,基希讷乌	1
+354	黎巴嫩	1
+355	保加利亚,索非亚	2
+356	山梨，山梨县	1
+357	Starogard Gdanski, Pomorskie, Poland	1
+358	佐治亚州亚特兰大市	1
+359	Mostar, Bosnia and Herzegovina, Yugoslavia	1
+360	京都府京都市	1
+361	Umtata   Eastern Cape of South Africa	1
+362	斯洛伐克,菲拉科沃	1
+363	阿曼,马斯喀特	1
+364	列宁格勒(前苏联)	1
+365	京畿道高阳市日山	1
+366	前苏联,堪察加	1
+367	哥伦比亚	1
+368	北海道札幌市南区	1
+369	Oldham, Lancashire, UK	1
+370	越南，胡志明市	1
+371	京都	1
+372	1990-01-07	1
+373	Westminster, London, England	1
+374	台东新港	1
+375	Norfolk, England	1
+376	Chicago, Illinois	1
+377	Cheadle Hulme, Cheshire, England, UK	1
+378	Miami, Florida, U.S.	1
+379	Westlake, Ohio, USA	1
+380	Bill Zehme	1
+381	纳米比亚,Tsumkwe	1
+382	斐济,苏瓦	1
+383	Suhl, Germany	1
+384	California/ East Coast	1
+385	枥木县	1
+386	挪威,利勒哈默尔	1
+387	UK	2
+388	Tana-mura, Kôza-gun, Kanagawa Prefecture, Japan [now Sagamihara City, Kanagawa Prefecture, Japan]	1
+389	芝加哥	1
+390	苏联，弗拉基米尔	1
+391	以色列,太巴列	1
+392	埃塞俄比亚,亚的斯亚贝巴	1
+393	威尔士,Hengoed,伊斯特拉德Mynach	1
+394	利物浦	1
+395	斯里兰卡,科伦坡	1
+396	格鲁吉亚	1
+397	南斯拉夫,马其顿,Kocani	1
+398	South Bend, Indiana, USA	1
+399	Edmonds, Washington, USA	1
+400	曼谷	2
+401	纽泽西，利文斯顿	1
+402	巴基斯坦,巴哈瓦尔布尔	1
+403	澳洲,北领地,阿纳姆地,Maningrida	1
+404	2002-01	1
+405	Minnesota	1
+406	神奈川県足柄下郡湯河原町	1
+407	越南岘港	1
+408	Baden-Württemberg, Germany	1
+409	京城府（首爾特別市），韓國（日治時期）	1
+410	塔希提岛	1
+411	挪威,Bærum	1
+412	也门亚丁	1
+413	捷克,拉贝河畔乌斯季	1
+414	Australia	2
+415	Bolton, Lancashire, England, UK	1
+416	West Midlands	1
+417	Oakland, California.	1
+418	南斯拉夫,波斯尼亚和黑塞哥维那,萨拉热窝	1
+419	捷克共和国  摩拉维亚地区	1
+420	Larchmont, New York, USA	1
+421	台灣	2
+422	埃及,开罗	1
+423	土耳其,巴勒克西尔	1
+424	Wien,Germany	1
+425	Leicester, Leicestershire	1
+426	拉脱维亚	2
+427	Shetland Islands, Scotland, UK	1
+428	波斯顿	1
+429	Winchmore Hill, North London	1
+430	Suresnes, Hauts-de-Seine, France	1
+431	苏联,斯维尔德洛夫斯克州,图林斯克	1
+432	巴哈马,罗尔镇	1
+433	格鲁吉亚,第比利斯	2
+434	塞尔维亚,克鲁舍瓦茨	1
+435	Riverside, California	1
+436	南斯拉夫,塞尔维亚,诺维萨德	1
+437	Middlesbrough, Cleveland, England, UK	1
+438	土耳其,梅尔辛,Silifke	1
+439	沙特阿拉伯,吉达	1
+440	尼日利亚,扎里亚	1
+441	捷克,Decin	1
+442	Dallas, Texas, United States	1
+443	Weymouth, Massachusetts	1
+444	汉城	1
+445	突尼斯,Biserta	1
+446	波多黎各,里奥彼德拉斯	1
+447	La Réunion	1
+448	倫敦	1
+449	柬埔寨,上丁	1
+450	Edinburgh, Scotland, UK	1
+451	london	1
+452	美國	1
+453	以色列,亚实基伦	1
+454	牙买加,克里斯蒂安娜	1
+455	南斯拉夫萨拉热窝(现在的波斯尼亚和黑塞哥维那)	1
+456	哥斯达黎加,利蒙港	1
+457	神奈川県	1
+458	以色列,海法	1
+459	Buffalo, New York	1
+460	斯洛伐克,Banská Bystrica	1
+461	Enniskillen, Co. Fermanagh, Northern Ireland, UK	1
+462	克罗地亚,伊斯特拉半岛,Pula	1
+463	东京都板桥区	1
+464	Hong Kong	1
+465	Charlotte, North Carolina,USA	1
+466	智利,瓦尔帕莱索	1
+467	乌拉圭	1
+468	Kosarzyska, Piwniczna-Zdrój, Poland	1
+469	土耳其，伊斯坦布尔	1
+470	坦桑尼亚,达累斯萨拉姆	1
+471	成都	1
+472	Wimbledon, London	1
+473	UK Coventry	1
+474	百慕大	1
+475	菲律宾,奎松市	1
+476	河内	1
+477	美國 加州 聖地亞哥	1
+478	葡萄牙,Setubal	1
+479	以色列,拿撒勒	2
+480	挪威,哈默菲斯特	1
+481	Wakefield, West Yorkshire, England	1
+482	马德里	1
+483	巴巴多斯,圣迈克尔	1
+484	Barcelona, Catalonia, Spain	1
+485	Kent, England	1
+486	波多黎各,庞塞	1
+487	尼日利亚,伊巴丹	1
+488	苏联,列宁格勒	1
+489	Prestbury, Cheshire, England, UK	1
+490	捷克斯洛伐克,新星Strelnica	1
+491	捷克,比尔森	1
+492	立陶宛,考纳斯	1
+493	摩洛哥,Marrakech	1
+494	高雄	1
+495	捷克,南摩拉维亚州,霍多宁	1
+496	Athlone, County Westmeath, Ireland	1
+497	Wallasey, England, UK	1
+498	青岛	1
+499	斯威士兰,姆巴巴纳	1
+500	斯洛伐克,马丁	1
+501	大连	1
+502	蒙特利尔	1
+503	波多黎各,Cayey	1
+504	文莱	1
+505	長野県	1
+506	捷克,奥洛穆克州,Prostějov	1
+507	London	1
+508	Westminster, London, England, UK	1
+509	Mysore, Karnataka, India	1
+510	缅甸,仰光	1
+511	静冈县滨松市中区	1
+512	India	1
+513	聯合王國，英格蘭，倫敦	1
+514	Västerås, Sweden	1
+515	黎巴嫩，Baabdat	1
+516	Victoria, Australia	1
+517	1995-11-16	1
+518	巴勒斯坦,海法	1
+519	Oxford, England	1
+520	土耳其,Yenice	1
+521	New Hampshire	1
+522	南斯拉夫[现斯洛文尼亚], 斯洛文尼亚, Llubljana	1
+523	土耳其,埃斯基谢希尔	1
+524	首爾	1
+525	静冈,县静冈市,骏河区	1
+526	华盛顿,雷德蒙	1
+527	南斯拉夫,萨拉热窝	1
+528	Vienna, Austria	1
+529	阿尔及利亚,奥兰	1
+530	Terceira, Açores, Portugal	1
+531	全罗道光州	1
+532	阿尔及利亚,阿尔及尔,Birkadem	1
+533	Los Angeles, USA	1
+534	Kansas City, Missouri, USA	1
+535	捷克斯洛伐克，布拉格	1
+536	捷克斯洛伐克,俄斯特拉发,Hrusov	1
+537	福冈县北九州市	1
+538	Florida	1
+539	摩洛哥,卡萨布兰卡	1
+540	New York City, New York, USA	1
+541	南斯拉夫,Krupan	1
+542	Long Beach, California	1

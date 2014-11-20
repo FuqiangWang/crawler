@@ -1,0 +1,13 @@
+<div class="shop-wrap">
+	<div id="shop-all-list"  var_array="$shoplist$">
+	
+		<div class="pic">
+              <a href="$shop$" > </a>
+        </div>
+                        
+                        
+	</div>
+	<div class="page">
+		<a href="$nextPage$" class="next"></a>
+	</div>
+</div>

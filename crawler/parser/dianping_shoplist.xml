@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<div class="box searchList searchResult searchList-v1009 listModeView" id="searchList">
+<dl var_array="$shoplist$">
+   <a href="$shop_id$" class="BL" ></a> 
+</dl>
+
+	
+	
+	<div class="Pages">						
+    <a href="$nexpage$" class="NextPage" title="下一页"></a>
+	</div>
+
+</div>
