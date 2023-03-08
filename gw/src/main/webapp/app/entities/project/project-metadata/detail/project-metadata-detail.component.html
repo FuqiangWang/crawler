@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="projectMetadata">
+      <h2 data-cy="projectMetadataDetailsHeading">
+        <span jhiTranslate="gwApp.projectProjectMetadata.detail.title">Project Metadata</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ projectMetadata.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.name">Name</span></dt>
+        <dd>
+          <span>{{ projectMetadata.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.type">Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'gwApp.ProjectType.' + projectMetadata.type }}">{{ projectMetadata.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.language">Language</span></dt>
+        <dd>
+          <span>{{ projectMetadata.language }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.langVersion">Lang Version</span></dt>
+        <dd>
+          <span>{{ projectMetadata.langVersion }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.buildTool">Build Tool</span></dt>
+        <dd>
+          <span>{{ projectMetadata.buildTool }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.buildToolVersion">Build Tool Version</span></dt>
+        <dd>
+          <span>{{ projectMetadata.buildToolVersion }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.banner">Banner</span></dt>
+        <dd>
+          <span>{{ projectMetadata.banner }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.favicon">Favicon</span></dt>
+        <dd>
+          <span>{{ projectMetadata.favicon }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.version">Version</span></dt>
+        <dd>
+          <span>{{ projectMetadata.version }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.rentId">Rent Id</span></dt>
+        <dd>
+          <span>{{ projectMetadata.rentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ projectMetadata.updateTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectProjectMetadata.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ projectMetadata.createTime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/project-metadata', projectMetadata.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

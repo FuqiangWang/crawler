@@ -1,0 +1,208 @@
+<div>
+  <h2 id="page-heading" data-cy="ArcMetadataHeading">
+    <span jhiTranslate="gwApp.projectArcMetadata.home.title">Arc Metadata</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="gwApp.projectArcMetadata.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-arc-metadata"
+        [routerLink]="['/arc-metadata/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="gwApp.projectArcMetadata.home.createLabel"> Create a new Arc Metadata </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="arcMetadata?.length === 0">
+    <span jhiTranslate="gwApp.projectArcMetadata.home.notFound">No Arc Metadata found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="arcMetadata && arcMetadata.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="type">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.type">Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="packageName">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.packageName">Package Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="serviceDiscoveryType">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.serviceDiscoveryType">Service Discovery Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="devDatabaseType">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.devDatabaseType">Dev Database Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="prodDatabaseType">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.prodDatabaseType">Prod Database Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="cacheProvider">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.cacheProvider">Cache Provider</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="messageBroker">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.messageBroker">Message Broker</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="serverPort">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.serverPort">Server Port</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="frontMessage">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.frontMessage">Front Message</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="clientFramework">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.clientFramework">Client Framework</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="languages">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.languages">Languages</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="testFramework">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.testFramework">Test Framework</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="rentId">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.rentId">Rent Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateTime">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.updateTime">Update Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createTime">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.createTime">Create Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="projectMetadata.id">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.projectMetadata">Project Metadata</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="arcTemplate.name">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcMetadata.arcTemplate">Arc Template</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let arcMetadata of arcMetadata; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/arc-metadata', arcMetadata.id, 'view']">{{ arcMetadata.id }}</a>
+          </td>
+          <td jhiTranslate="{{ 'gwApp.ArcModelType.' + arcMetadata.type }}">{{ arcMetadata.type }}</td>
+          <td>{{ arcMetadata.packageName }}</td>
+          <td>{{ arcMetadata.serviceDiscoveryType }}</td>
+          <td>{{ arcMetadata.devDatabaseType }}</td>
+          <td>{{ arcMetadata.prodDatabaseType }}</td>
+          <td>{{ arcMetadata.cacheProvider }}</td>
+          <td>{{ arcMetadata.messageBroker }}</td>
+          <td>{{ arcMetadata.serverPort }}</td>
+          <td>{{ arcMetadata.frontMessage }}</td>
+          <td>{{ arcMetadata.clientFramework }}</td>
+          <td>{{ arcMetadata.languages }}</td>
+          <td>{{ arcMetadata.testFramework }}</td>
+          <td>{{ arcMetadata.rentId }}</td>
+          <td>{{ arcMetadata.updateTime }}</td>
+          <td>{{ arcMetadata.createTime }}</td>
+          <td>
+            <div *ngIf="arcMetadata.projectMetadata">
+              <a [routerLink]="['/project-metadata', arcMetadata.projectMetadata.id, 'view']">{{ arcMetadata.projectMetadata.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="arcMetadata.arcTemplate">
+              <a [routerLink]="['/arc-template', arcMetadata.arcTemplate.id, 'view']">{{ arcMetadata.arcTemplate.name }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/arc-metadata', arcMetadata.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/arc-metadata', arcMetadata.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(arcMetadata)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

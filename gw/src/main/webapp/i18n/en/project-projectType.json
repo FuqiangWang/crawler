@@ -1,0 +1,9 @@
+{
+  "gwApp": {
+    "ProjectType": {
+      "null": "",
+      "MONOLITH": "MONOLITH",
+      "MICROSERVICE": "MICROSERVICE"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "applications": ["gw", "project"],
+  "changelogDate": "20230308083004",
+  "clientRootFolder": "project",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "arc_metadata",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "ArcModelType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "TEMPLATE,MANUAL"
+    },
+    {
+      "fieldName": "packageName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "serviceDiscoveryType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "devDatabaseType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prodDatabaseType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cacheProvider",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "messageBroker",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "serverPort",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "frontMessage",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientFramework",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "languages",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "testFramework",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rentId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updateTime",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "project",
+  "name": "ArcMetadata",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "projectMetadata",
+      "otherEntityRelationshipName": "arcMetadata",
+      "ownerSide": true,
+      "relationshipName": "projectMetadata",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "arcTemplate",
+      "ownerSide": true,
+      "relationshipName": "arcTemplate",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

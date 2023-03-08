@@ -1,0 +1,254 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-cicd-metadata-heading"
+        data-cy="CicdMetadataCreateUpdateHeading"
+        jhiTranslate="gwApp.projectCicdMetadata.home.createOrEditLabel"
+      >
+        Create or edit a Cicd Metadata
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.repositoryType" for="field_repositoryType"
+            >Repository Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="repositoryType"
+            id="field_repositoryType"
+            data-cy="repositoryType"
+            formControlName="repositoryType"
+          />
+          <div
+            *ngIf="
+              editForm.get('repositoryType')!.invalid && (editForm.get('repositoryType')!.dirty || editForm.get('repositoryType')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('repositoryType')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.repositoryName" for="field_repositoryName"
+            >Repository Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="repositoryName"
+            id="field_repositoryName"
+            data-cy="repositoryName"
+            formControlName="repositoryName"
+          />
+          <div
+            *ngIf="
+              editForm.get('repositoryName')!.invalid && (editForm.get('repositoryName')!.dirty || editForm.get('repositoryName')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('repositoryName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.ciName" for="field_ciName">Ci Name</label>
+          <input type="text" class="form-control" name="ciName" id="field_ciName" data-cy="ciName" formControlName="ciName" />
+          <div *ngIf="editForm.get('ciName')!.invalid && (editForm.get('ciName')!.dirty || editForm.get('ciName')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('ciName')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.ciUrl" for="field_ciUrl">Ci Url</label>
+          <input type="text" class="form-control" name="ciUrl" id="field_ciUrl" data-cy="ciUrl" formControlName="ciUrl" />
+          <div *ngIf="editForm.get('ciUrl')!.invalid && (editForm.get('ciUrl')!.dirty || editForm.get('ciUrl')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('ciUrl')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.buildPkg" for="field_buildPkg">Build Pkg</label>
+          <input type="text" class="form-control" name="buildPkg" id="field_buildPkg" data-cy="buildPkg" formControlName="buildPkg" />
+          <div *ngIf="editForm.get('buildPkg')!.invalid && (editForm.get('buildPkg')!.dirty || editForm.get('buildPkg')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('buildPkg')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.mirrorRepository" for="field_mirrorRepository"
+            >Mirror Repository</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="mirrorRepository"
+            id="field_mirrorRepository"
+            data-cy="mirrorRepository"
+            formControlName="mirrorRepository"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.cdType" for="field_cdType">Cd Type</label>
+          <select class="form-control" name="cdType" formControlName="cdType" id="field_cdType" data-cy="cdType">
+            <option [ngValue]="null">{{ 'gwApp.CdType.null' | translate }}</option>
+            <option *ngFor="let cdType of cdTypeValues" [value]="cdType">{{ 'gwApp.CdType.' + cdType | translate }}</option>
+          </select>
+          <div *ngIf="editForm.get('cdType')!.invalid && (editForm.get('cdType')!.dirty || editForm.get('cdType')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('cdType')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.autoIp" for="field_autoIp">Auto Ip</label>
+          <input type="text" class="form-control" name="autoIp" id="field_autoIp" data-cy="autoIp" formControlName="autoIp" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.autoPort" for="field_autoPort">Auto Port</label>
+          <input type="number" class="form-control" name="autoPort" id="field_autoPort" data-cy="autoPort" formControlName="autoPort" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.autoUser" for="field_autoUser">Auto User</label>
+          <input type="text" class="form-control" name="autoUser" id="field_autoUser" data-cy="autoUser" formControlName="autoUser" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.autoPwd" for="field_autoPwd">Auto Pwd</label>
+          <input type="text" class="form-control" name="autoPwd" id="field_autoPwd" data-cy="autoPwd" formControlName="autoPwd" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.autoKey" for="field_autoKey">Auto Key</label>
+          <textarea class="form-control" name="autoKey" id="field_autoKey" data-cy="autoKey" formControlName="autoKey"></textarea>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.deploy" for="field_deploy">Deploy</label>
+          <input type="text" class="form-control" name="deploy" id="field_deploy" data-cy="deploy" formControlName="deploy" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.rentId" for="field_rentId">Rent Id</label>
+          <input type="text" class="form-control" name="rentId" id="field_rentId" data-cy="rentId" formControlName="rentId" />
+          <div *ngIf="editForm.get('rentId')!.invalid && (editForm.get('rentId')!.dirty || editForm.get('rentId')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('rentId')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.updateTime" for="field_updateTime">Update Time</label>
+          <input
+            type="text"
+            class="form-control"
+            name="updateTime"
+            id="field_updateTime"
+            data-cy="updateTime"
+            formControlName="updateTime"
+          />
+          <div *ngIf="editForm.get('updateTime')!.invalid && (editForm.get('updateTime')!.dirty || editForm.get('updateTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('updateTime')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.createTime" for="field_createTime">Create Time</label>
+          <input
+            type="text"
+            class="form-control"
+            name="createTime"
+            id="field_createTime"
+            data-cy="createTime"
+            formControlName="createTime"
+          />
+          <div *ngIf="editForm.get('createTime')!.invalid && (editForm.get('createTime')!.dirty || editForm.get('createTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('createTime')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectCicdMetadata.projectMetadata" for="field_projectMetadata"
+            >Project Metadata</label
+          >
+          <select
+            class="form-control"
+            id="field_projectMetadata"
+            data-cy="projectMetadata"
+            name="projectMetadata"
+            formControlName="projectMetadata"
+            [compareWith]="compareProjectMetadata"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="projectMetadataOption" *ngFor="let projectMetadataOption of projectMetadataCollection">
+              {{ projectMetadataOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

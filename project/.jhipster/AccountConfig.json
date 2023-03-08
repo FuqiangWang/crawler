@@ -1,0 +1,56 @@
+{
+  "applications": ["gw", "project"],
+  "changelogDate": "20230308083204",
+  "clientRootFolder": "project",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "account_config",
+  "fields": [
+    {
+      "fieldName": "gitHubUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gitHubPwd",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gitLabUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gitLabPwd",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "giteeUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "giteePwd",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dockerHubUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dockHubPwd",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rendId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "project",
+  "name": "AccountConfig",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

@@ -1,0 +1,42 @@
+{
+  "gwApp": {
+    "projectArcTemplate": {
+      "home": {
+        "title": "Arc Templates",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Arc Template",
+        "createOrEditLabel": "Create or edit a Arc Template",
+        "notFound": "No Arc Templates found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Arc Template {{ id }}?"
+      },
+      "detail": {
+        "title": "Arc Template"
+      },
+      "id": "ID",
+      "name": "Name",
+      "packageName": "Package Name",
+      "serviceDiscoveryType": "Service Discovery Type",
+      "devDatabaseType": "Dev Database Type",
+      "prodDatabaseType": "Prod Database Type",
+      "cacheProvider": "Cache Provider",
+      "messageBroker": "Message Broker",
+      "serverPort": "Server Port",
+      "frontMessage": "Front Message",
+      "clientFramework": "Client Framework",
+      "languages": "Languages",
+      "testFramework": "Test Framework",
+      "rentId": "Rent Id",
+      "updateTime": "Update Time",
+      "createTime": "Create Time"
+    }
+  },
+  "projectApp": {
+    "projectArcTemplate": {
+      "created": "A new Arc Template is created with identifier {{ param }}",
+      "updated": "A Arc Template is updated with identifier {{ param }}",
+      "deleted": "A Arc Template is deleted with identifier {{ param }}"
+    }
+  }
+}

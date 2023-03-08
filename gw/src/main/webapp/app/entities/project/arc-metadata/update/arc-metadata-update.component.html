@@ -1,0 +1,299 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-arc-metadata-heading"
+        data-cy="ArcMetadataCreateUpdateHeading"
+        jhiTranslate="gwApp.projectArcMetadata.home.createOrEditLabel"
+      >
+        Create or edit a Arc Metadata
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.type" for="field_type">Type</label>
+          <select class="form-control" name="type" formControlName="type" id="field_type" data-cy="type">
+            <option [ngValue]="null">{{ 'gwApp.ArcModelType.null' | translate }}</option>
+            <option *ngFor="let arcModelType of arcModelTypeValues" [value]="arcModelType">
+              {{ 'gwApp.ArcModelType.' + arcModelType | translate }}
+            </option>
+          </select>
+          <div *ngIf="editForm.get('type')!.invalid && (editForm.get('type')!.dirty || editForm.get('type')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('type')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.packageName" for="field_packageName">Package Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="packageName"
+            id="field_packageName"
+            data-cy="packageName"
+            formControlName="packageName"
+          />
+          <div *ngIf="editForm.get('packageName')!.invalid && (editForm.get('packageName')!.dirty || editForm.get('packageName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('packageName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.serviceDiscoveryType" for="field_serviceDiscoveryType"
+            >Service Discovery Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="serviceDiscoveryType"
+            id="field_serviceDiscoveryType"
+            data-cy="serviceDiscoveryType"
+            formControlName="serviceDiscoveryType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.devDatabaseType" for="field_devDatabaseType"
+            >Dev Database Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="devDatabaseType"
+            id="field_devDatabaseType"
+            data-cy="devDatabaseType"
+            formControlName="devDatabaseType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.prodDatabaseType" for="field_prodDatabaseType"
+            >Prod Database Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="prodDatabaseType"
+            id="field_prodDatabaseType"
+            data-cy="prodDatabaseType"
+            formControlName="prodDatabaseType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.cacheProvider" for="field_cacheProvider">Cache Provider</label>
+          <input
+            type="text"
+            class="form-control"
+            name="cacheProvider"
+            id="field_cacheProvider"
+            data-cy="cacheProvider"
+            formControlName="cacheProvider"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.messageBroker" for="field_messageBroker">Message Broker</label>
+          <input
+            type="text"
+            class="form-control"
+            name="messageBroker"
+            id="field_messageBroker"
+            data-cy="messageBroker"
+            formControlName="messageBroker"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.serverPort" for="field_serverPort">Server Port</label>
+          <input
+            type="number"
+            class="form-control"
+            name="serverPort"
+            id="field_serverPort"
+            data-cy="serverPort"
+            formControlName="serverPort"
+          />
+          <div *ngIf="editForm.get('serverPort')!.invalid && (editForm.get('serverPort')!.dirty || editForm.get('serverPort')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('serverPort')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('serverPort')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.frontMessage" for="field_frontMessage">Front Message</label>
+          <input
+            type="text"
+            class="form-control"
+            name="frontMessage"
+            id="field_frontMessage"
+            data-cy="frontMessage"
+            formControlName="frontMessage"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.clientFramework" for="field_clientFramework"
+            >Client Framework</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="clientFramework"
+            id="field_clientFramework"
+            data-cy="clientFramework"
+            formControlName="clientFramework"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.languages" for="field_languages">Languages</label>
+          <input type="text" class="form-control" name="languages" id="field_languages" data-cy="languages" formControlName="languages" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.testFramework" for="field_testFramework">Test Framework</label>
+          <input
+            type="text"
+            class="form-control"
+            name="testFramework"
+            id="field_testFramework"
+            data-cy="testFramework"
+            formControlName="testFramework"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.rentId" for="field_rentId">Rent Id</label>
+          <input type="text" class="form-control" name="rentId" id="field_rentId" data-cy="rentId" formControlName="rentId" />
+          <div *ngIf="editForm.get('rentId')!.invalid && (editForm.get('rentId')!.dirty || editForm.get('rentId')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('rentId')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.updateTime" for="field_updateTime">Update Time</label>
+          <input
+            type="text"
+            class="form-control"
+            name="updateTime"
+            id="field_updateTime"
+            data-cy="updateTime"
+            formControlName="updateTime"
+          />
+          <div *ngIf="editForm.get('updateTime')!.invalid && (editForm.get('updateTime')!.dirty || editForm.get('updateTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('updateTime')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.createTime" for="field_createTime">Create Time</label>
+          <input
+            type="text"
+            class="form-control"
+            name="createTime"
+            id="field_createTime"
+            data-cy="createTime"
+            formControlName="createTime"
+          />
+          <div *ngIf="editForm.get('createTime')!.invalid && (editForm.get('createTime')!.dirty || editForm.get('createTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('createTime')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.projectMetadata" for="field_projectMetadata"
+            >Project Metadata</label
+          >
+          <select
+            class="form-control"
+            id="field_projectMetadata"
+            data-cy="projectMetadata"
+            name="projectMetadata"
+            formControlName="projectMetadata"
+            [compareWith]="compareProjectMetadata"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="projectMetadataOption" *ngFor="let projectMetadataOption of projectMetadataCollection">
+              {{ projectMetadataOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcMetadata.arcTemplate" for="field_arcTemplate">Arc Template</label>
+          <select
+            class="form-control"
+            id="field_arcTemplate"
+            data-cy="arcTemplate"
+            name="arcTemplate"
+            formControlName="arcTemplate"
+            [compareWith]="compareArcTemplate"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="arcTemplateOption" *ngFor="let arcTemplateOption of arcTemplatesSharedCollection">
+              {{ arcTemplateOption.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

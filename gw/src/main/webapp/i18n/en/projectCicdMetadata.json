@@ -1,0 +1,44 @@
+{
+  "gwApp": {
+    "projectCicdMetadata": {
+      "home": {
+        "title": "Cicd Metadata",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Cicd Metadata",
+        "createOrEditLabel": "Create or edit a Cicd Metadata",
+        "notFound": "No Cicd Metadata found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Cicd Metadata {{ id }}?"
+      },
+      "detail": {
+        "title": "Cicd Metadata"
+      },
+      "id": "ID",
+      "repositoryType": "Repository Type",
+      "repositoryName": "Repository Name",
+      "ciName": "Ci Name",
+      "ciUrl": "Ci Url",
+      "buildPkg": "Build Pkg",
+      "mirrorRepository": "Mirror Repository",
+      "cdType": "Cd Type",
+      "autoIp": "Auto Ip",
+      "autoPort": "Auto Port",
+      "autoUser": "Auto User",
+      "autoPwd": "Auto Pwd",
+      "autoKey": "Auto Key",
+      "deploy": "Deploy",
+      "rentId": "Rent Id",
+      "updateTime": "Update Time",
+      "createTime": "Create Time",
+      "projectMetadata": "Project Metadata"
+    }
+  },
+  "projectApp": {
+    "projectCicdMetadata": {
+      "created": "A new Cicd Metadata is created with identifier {{ param }}",
+      "updated": "A Cicd Metadata is updated with identifier {{ param }}",
+      "deleted": "A Cicd Metadata is deleted with identifier {{ param }}"
+    }
+  }
+}
