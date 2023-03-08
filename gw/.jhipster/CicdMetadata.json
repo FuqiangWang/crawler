@@ -1,0 +1,102 @@
+{
+  "applications": ["gw", "project"],
+  "changelogDate": "20230308082904",
+  "clientRootFolder": "project",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "cicd_metadata",
+  "fields": [
+    {
+      "fieldName": "repositoryType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "repositoryName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ciName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ciUrl",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "buildPkg",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "mirrorRepository",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cdType",
+      "fieldType": "CdType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "AUTO,MANUAL"
+    },
+    {
+      "fieldName": "autoIp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "autoPort",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "autoUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "autoPwd",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "autoKey",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "deploy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rentId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updateTime",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "project",
+  "name": "CicdMetadata",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "projectMetadata",
+      "otherEntityRelationshipName": "cicdMetadata",
+      "ownerSide": true,
+      "relationshipName": "projectMetadata",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

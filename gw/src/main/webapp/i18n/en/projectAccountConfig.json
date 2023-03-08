@@ -1,0 +1,36 @@
+{
+  "gwApp": {
+    "projectAccountConfig": {
+      "home": {
+        "title": "Account Configs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Account Config",
+        "createOrEditLabel": "Create or edit a Account Config",
+        "notFound": "No Account Configs found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Account Config {{ id }}?"
+      },
+      "detail": {
+        "title": "Account Config"
+      },
+      "id": "ID",
+      "gitHubUser": "Git Hub User",
+      "gitHubPwd": "Git Hub Pwd",
+      "gitLabUser": "Git Lab User",
+      "gitLabPwd": "Git Lab Pwd",
+      "giteeUser": "Gitee User",
+      "giteePwd": "Gitee Pwd",
+      "dockerHubUser": "Docker Hub User",
+      "dockHubPwd": "Dock Hub Pwd",
+      "rendId": "Rend Id"
+    }
+  },
+  "projectApp": {
+    "projectAccountConfig": {
+      "created": "A new Account Config is created with identifier {{ param }}",
+      "updated": "A Account Config is updated with identifier {{ param }}",
+      "deleted": "A Account Config is deleted with identifier {{ param }}"
+    }
+  }
+}

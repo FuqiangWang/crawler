@@ -1,0 +1,98 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="cicdMetadata">
+      <h2 data-cy="cicdMetadataDetailsHeading"><span jhiTranslate="gwApp.projectCicdMetadata.detail.title">Cicd Metadata</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.repositoryType">Repository Type</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.repositoryType }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.repositoryName">Repository Name</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.repositoryName }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.ciName">Ci Name</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.ciName }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.ciUrl">Ci Url</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.ciUrl }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.buildPkg">Build Pkg</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.buildPkg }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.mirrorRepository">Mirror Repository</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.mirrorRepository }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.cdType">Cd Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'gwApp.CdType.' + cicdMetadata.cdType }}">{{ cicdMetadata.cdType }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.autoIp">Auto Ip</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.autoIp }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.autoPort">Auto Port</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.autoPort }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.autoUser">Auto User</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.autoUser }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.autoPwd">Auto Pwd</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.autoPwd }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.autoKey">Auto Key</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.autoKey }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.deploy">Deploy</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.deploy }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.rentId">Rent Id</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.rentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.updateTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ cicdMetadata.createTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectCicdMetadata.projectMetadata">Project Metadata</span></dt>
+        <dd>
+          <div *ngIf="cicdMetadata.projectMetadata">
+            <a [routerLink]="['/project-metadata', cicdMetadata.projectMetadata.id, 'view']">{{ cicdMetadata.projectMetadata.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/cicd-metadata', cicdMetadata.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

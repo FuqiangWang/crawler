@@ -1,0 +1,198 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-project-metadata-heading"
+        data-cy="ProjectMetadataCreateUpdateHeading"
+        jhiTranslate="gwApp.projectProjectMetadata.home.createOrEditLabel"
+      >
+        Create or edit a Project Metadata
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.type" for="field_type">Type</label>
+          <select class="form-control" name="type" formControlName="type" id="field_type" data-cy="type">
+            <option [ngValue]="null">{{ 'gwApp.ProjectType.null' | translate }}</option>
+            <option *ngFor="let projectType of projectTypeValues" [value]="projectType">
+              {{ 'gwApp.ProjectType.' + projectType | translate }}
+            </option>
+          </select>
+          <div *ngIf="editForm.get('type')!.invalid && (editForm.get('type')!.dirty || editForm.get('type')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('type')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.language" for="field_language">Language</label>
+          <input type="text" class="form-control" name="language" id="field_language" data-cy="language" formControlName="language" />
+          <div *ngIf="editForm.get('language')!.invalid && (editForm.get('language')!.dirty || editForm.get('language')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('language')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.langVersion" for="field_langVersion">Lang Version</label>
+          <input
+            type="text"
+            class="form-control"
+            name="langVersion"
+            id="field_langVersion"
+            data-cy="langVersion"
+            formControlName="langVersion"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.buildTool" for="field_buildTool">Build Tool</label>
+          <input type="text" class="form-control" name="buildTool" id="field_buildTool" data-cy="buildTool" formControlName="buildTool" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.buildToolVersion" for="field_buildToolVersion"
+            >Build Tool Version</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="buildToolVersion"
+            id="field_buildToolVersion"
+            data-cy="buildToolVersion"
+            formControlName="buildToolVersion"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.banner" for="field_banner">Banner</label>
+          <input type="text" class="form-control" name="banner" id="field_banner" data-cy="banner" formControlName="banner" />
+          <div *ngIf="editForm.get('banner')!.invalid && (editForm.get('banner')!.dirty || editForm.get('banner')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('banner')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.favicon" for="field_favicon">Favicon</label>
+          <textarea class="form-control" name="favicon" id="field_favicon" data-cy="favicon" formControlName="favicon"></textarea>
+          <div *ngIf="editForm.get('favicon')!.invalid && (editForm.get('favicon')!.dirty || editForm.get('favicon')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('favicon')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.version" for="field_version">Version</label>
+          <input type="text" class="form-control" name="version" id="field_version" data-cy="version" formControlName="version" />
+          <div *ngIf="editForm.get('version')!.invalid && (editForm.get('version')!.dirty || editForm.get('version')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('version')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.rentId" for="field_rentId">Rent Id</label>
+          <input type="text" class="form-control" name="rentId" id="field_rentId" data-cy="rentId" formControlName="rentId" />
+          <div *ngIf="editForm.get('rentId')!.invalid && (editForm.get('rentId')!.dirty || editForm.get('rentId')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('rentId')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.updateTime" for="field_updateTime">Update Time</label>
+          <input
+            type="text"
+            class="form-control"
+            name="updateTime"
+            id="field_updateTime"
+            data-cy="updateTime"
+            formControlName="updateTime"
+          />
+          <div *ngIf="editForm.get('updateTime')!.invalid && (editForm.get('updateTime')!.dirty || editForm.get('updateTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('updateTime')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectProjectMetadata.createTime" for="field_createTime">Create Time</label>
+          <input
+            type="text"
+            class="form-control"
+            name="createTime"
+            id="field_createTime"
+            data-cy="createTime"
+            formControlName="createTime"
+          />
+          <div *ngIf="editForm.get('createTime')!.invalid && (editForm.get('createTime')!.dirty || editForm.get('createTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('createTime')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

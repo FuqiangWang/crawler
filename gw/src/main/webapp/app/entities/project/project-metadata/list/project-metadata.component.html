@@ -1,0 +1,183 @@
+<div>
+  <h2 id="page-heading" data-cy="ProjectMetadataHeading">
+    <span jhiTranslate="gwApp.projectProjectMetadata.home.title">Project Metadata</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="gwApp.projectProjectMetadata.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-project-metadata"
+        [routerLink]="['/project-metadata/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="gwApp.projectProjectMetadata.home.createLabel"> Create a new Project Metadata </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="projectMetadata?.length === 0">
+    <span jhiTranslate="gwApp.projectProjectMetadata.home.notFound">No Project Metadata found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="projectMetadata && projectMetadata.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="name">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.name">Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="type">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.type">Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="language">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.language">Language</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="langVersion">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.langVersion">Lang Version</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="buildTool">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.buildTool">Build Tool</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="buildToolVersion">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.buildToolVersion">Build Tool Version</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="banner">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.banner">Banner</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="favicon">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.favicon">Favicon</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="version">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.version">Version</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="rentId">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.rentId">Rent Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateTime">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.updateTime">Update Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createTime">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectProjectMetadata.createTime">Create Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let projectMetadata of projectMetadata; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/project-metadata', projectMetadata.id, 'view']">{{ projectMetadata.id }}</a>
+          </td>
+          <td>{{ projectMetadata.name }}</td>
+          <td jhiTranslate="{{ 'gwApp.ProjectType.' + projectMetadata.type }}">{{ projectMetadata.type }}</td>
+          <td>{{ projectMetadata.language }}</td>
+          <td>{{ projectMetadata.langVersion }}</td>
+          <td>{{ projectMetadata.buildTool }}</td>
+          <td>{{ projectMetadata.buildToolVersion }}</td>
+          <td>{{ projectMetadata.banner }}</td>
+          <td>{{ projectMetadata.favicon }}</td>
+          <td>{{ projectMetadata.version }}</td>
+          <td>{{ projectMetadata.rentId }}</td>
+          <td>{{ projectMetadata.updateTime }}</td>
+          <td>{{ projectMetadata.createTime }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/project-metadata', projectMetadata.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/project-metadata', projectMetadata.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(projectMetadata)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="projectMetadata && projectMetadata.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

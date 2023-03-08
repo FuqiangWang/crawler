@@ -1,0 +1,149 @@
+application {
+    config {
+        baseName gw
+        applicationType gateway
+        packageName com.huawei.apaas.project.gw
+        serviceDiscoveryType eureka
+        authenticationType oauth2
+        devDatabaseType h2Memory
+        prodDatabaseType mysql
+        cacheProvider no
+        buildTool maven
+        clientFramework angular
+        reactive true
+        nativeLanguage en
+        languages [en]
+    }
+    entities *
+}
+
+application {
+    config {
+        baseName project
+        applicationType microservice
+        packageName com.huawei.apaas.project
+        serviceDiscoveryType eureka
+        authenticationType oauth2
+        devDatabaseType h2Memory
+        prodDatabaseType mysql
+        cacheProvider no
+        enableHibernateCache false
+        buildTool maven
+        serverPort 8081
+        skipUserManagement true
+    }
+    entities *
+}
+
+/** entities for Project mirco service*/
+entity ProjectMetadata {
+    name String required unique
+    type ProjectType required
+    language String required
+    langVersion String
+    buildTool String
+    buildToolVersion String
+    banner String required
+    favicon TextBlob required
+    version String required
+    rentId String required
+    updateTime String required
+    createTime String required
+}
+
+enum ProjectType {
+    MONOLITH, MICROSERVICE
+}
+
+
+entity ArcMetadata{
+    type ArcModelType required
+    packageName String required
+    serviceDiscoveryType String
+    devDatabaseType String
+    prodDatabaseType String
+    cacheProvider String
+    messageBroker String
+    serverPort Long required
+    frontMessage String
+    clientFramework String
+    languages String
+    testFramework String
+    rentId String required
+    updateTime String required
+    createTime String required
+}
+enum  ArcModelType{
+    TEMPLATE,MANUAL
+}
+
+entity ArcTemplate {
+    name String required
+    packageName String required
+    serviceDiscoveryType String
+    devDatabaseType String
+    prodDatabaseType String
+    cacheProvider String
+    messageBroker String
+    serverPort Integer required
+    frontMessage String
+    clientFramework String
+    languages String
+    testFramework String
+    rentId String required
+    updateTime String required
+    createTime String required
+}
+
+entity CicdMetadata{
+    repositoryType String required
+    repositoryName String required
+    ciName String required
+    ciUrl String required
+    buildPkg String required
+    mirrorRepository String
+    cdType CdType required
+    autoIp String
+    autoPort Integer
+    autoUser String
+    autoPwd String
+    autoKey TextBlob
+    deploy String
+    rentId String required
+    updateTime String required
+    createTime String required
+}
+enum CdType{
+    AUTO,MANUAL
+}
+
+entity OpsMetadata{
+    opsSystem String required
+    rentId String
+    createTime String required
+    updateTime String required
+}
+
+entity AccountConfig{
+    gitHubUser String
+    gitHubPwd String
+    gitLabUser String
+    gitLabPwd String
+    GiteeUser String
+    GiteePwd String
+    dockerHubUser String
+    dockHubPwd String
+    rendId String required
+}
+
+
+relationship OneToOne{
+    ArcMetadata to ProjectMetadata,
+    CicdMetadata to ProjectMetadata,
+    OpsMetadata to ProjectMetadata,
+    ArcMetadata{ArcTemplate(name)} to ArcTemplate
+}
+
+service ProjectMetadata, ArcMetadata, ArcTemplate, CicdMetadata, OpsMetadata, AccountConfig with serviceClass
+paginate ProjectMetadata with pagination
+microservice ProjectMetadata, ArcMetadata, ArcTemplate, CicdMetadata, OpsMetadata, AccountConfig with project

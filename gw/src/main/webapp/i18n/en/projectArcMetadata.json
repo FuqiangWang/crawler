@@ -1,0 +1,44 @@
+{
+  "gwApp": {
+    "projectArcMetadata": {
+      "home": {
+        "title": "Arc Metadata",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Arc Metadata",
+        "createOrEditLabel": "Create or edit a Arc Metadata",
+        "notFound": "No Arc Metadata found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Arc Metadata {{ id }}?"
+      },
+      "detail": {
+        "title": "Arc Metadata"
+      },
+      "id": "ID",
+      "type": "Type",
+      "packageName": "Package Name",
+      "serviceDiscoveryType": "Service Discovery Type",
+      "devDatabaseType": "Dev Database Type",
+      "prodDatabaseType": "Prod Database Type",
+      "cacheProvider": "Cache Provider",
+      "messageBroker": "Message Broker",
+      "serverPort": "Server Port",
+      "frontMessage": "Front Message",
+      "clientFramework": "Client Framework",
+      "languages": "Languages",
+      "testFramework": "Test Framework",
+      "rentId": "Rent Id",
+      "updateTime": "Update Time",
+      "createTime": "Create Time",
+      "projectMetadata": "Project Metadata",
+      "arcTemplate": "Arc Template"
+    }
+  },
+  "projectApp": {
+    "projectArcMetadata": {
+      "created": "A new Arc Metadata is created with identifier {{ param }}",
+      "updated": "A Arc Metadata is updated with identifier {{ param }}",
+      "deleted": "A Arc Metadata is deleted with identifier {{ param }}"
+    }
+  }
+}

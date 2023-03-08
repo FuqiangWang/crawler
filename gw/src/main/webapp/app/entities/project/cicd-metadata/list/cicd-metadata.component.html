@@ -1,0 +1,204 @@
+<div>
+  <h2 id="page-heading" data-cy="CicdMetadataHeading">
+    <span jhiTranslate="gwApp.projectCicdMetadata.home.title">Cicd Metadata</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="gwApp.projectCicdMetadata.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-cicd-metadata"
+        [routerLink]="['/cicd-metadata/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="gwApp.projectCicdMetadata.home.createLabel"> Create a new Cicd Metadata </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="cicdMetadata?.length === 0">
+    <span jhiTranslate="gwApp.projectCicdMetadata.home.notFound">No Cicd Metadata found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="cicdMetadata && cicdMetadata.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="repositoryType">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.repositoryType">Repository Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="repositoryName">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.repositoryName">Repository Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="ciName">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.ciName">Ci Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="ciUrl">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.ciUrl">Ci Url</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="buildPkg">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.buildPkg">Build Pkg</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="mirrorRepository">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.mirrorRepository">Mirror Repository</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="cdType">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.cdType">Cd Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="autoIp">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.autoIp">Auto Ip</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="autoPort">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.autoPort">Auto Port</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="autoUser">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.autoUser">Auto User</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="autoPwd">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.autoPwd">Auto Pwd</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="autoKey">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.autoKey">Auto Key</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="deploy">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.deploy">Deploy</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="rentId">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.rentId">Rent Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateTime">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.updateTime">Update Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createTime">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.createTime">Create Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="projectMetadata.id">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectCicdMetadata.projectMetadata">Project Metadata</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cicdMetadata of cicdMetadata; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/cicd-metadata', cicdMetadata.id, 'view']">{{ cicdMetadata.id }}</a>
+          </td>
+          <td>{{ cicdMetadata.repositoryType }}</td>
+          <td>{{ cicdMetadata.repositoryName }}</td>
+          <td>{{ cicdMetadata.ciName }}</td>
+          <td>{{ cicdMetadata.ciUrl }}</td>
+          <td>{{ cicdMetadata.buildPkg }}</td>
+          <td>{{ cicdMetadata.mirrorRepository }}</td>
+          <td jhiTranslate="{{ 'gwApp.CdType.' + cicdMetadata.cdType }}">{{ cicdMetadata.cdType }}</td>
+          <td>{{ cicdMetadata.autoIp }}</td>
+          <td>{{ cicdMetadata.autoPort }}</td>
+          <td>{{ cicdMetadata.autoUser }}</td>
+          <td>{{ cicdMetadata.autoPwd }}</td>
+          <td>{{ cicdMetadata.autoKey }}</td>
+          <td>{{ cicdMetadata.deploy }}</td>
+          <td>{{ cicdMetadata.rentId }}</td>
+          <td>{{ cicdMetadata.updateTime }}</td>
+          <td>{{ cicdMetadata.createTime }}</td>
+          <td>
+            <div *ngIf="cicdMetadata.projectMetadata">
+              <a [routerLink]="['/project-metadata', cicdMetadata.projectMetadata.id, 'view']">{{ cicdMetadata.projectMetadata.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/cicd-metadata', cicdMetadata.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/cicd-metadata', cicdMetadata.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(cicdMetadata)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

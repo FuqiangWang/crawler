@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity ArcMetadata.
+    -->
+    <changeSet id="20230308083004-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="project_metadata_id"
+                                 baseTableName="arc_metadata"
+                                 constraintName="fk_arc_metadata__project_metadata_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="project_metadata"/>
+
+        <addForeignKeyConstraint baseColumnNames="arc_template_id"
+                                 baseTableName="arc_metadata"
+                                 constraintName="fk_arc_metadata__arc_template_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="arc_template"/>
+    </changeSet>
+</databaseChangeLog>

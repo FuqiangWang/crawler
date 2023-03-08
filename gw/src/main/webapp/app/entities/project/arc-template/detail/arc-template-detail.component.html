@@ -1,0 +1,88 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="arcTemplate">
+      <h2 data-cy="arcTemplateDetailsHeading"><span jhiTranslate="gwApp.projectArcTemplate.detail.title">Arc Template</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ arcTemplate.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.name">Name</span></dt>
+        <dd>
+          <span>{{ arcTemplate.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.packageName">Package Name</span></dt>
+        <dd>
+          <span>{{ arcTemplate.packageName }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.serviceDiscoveryType">Service Discovery Type</span></dt>
+        <dd>
+          <span>{{ arcTemplate.serviceDiscoveryType }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.devDatabaseType">Dev Database Type</span></dt>
+        <dd>
+          <span>{{ arcTemplate.devDatabaseType }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.prodDatabaseType">Prod Database Type</span></dt>
+        <dd>
+          <span>{{ arcTemplate.prodDatabaseType }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.cacheProvider">Cache Provider</span></dt>
+        <dd>
+          <span>{{ arcTemplate.cacheProvider }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.messageBroker">Message Broker</span></dt>
+        <dd>
+          <span>{{ arcTemplate.messageBroker }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.serverPort">Server Port</span></dt>
+        <dd>
+          <span>{{ arcTemplate.serverPort }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.frontMessage">Front Message</span></dt>
+        <dd>
+          <span>{{ arcTemplate.frontMessage }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.clientFramework">Client Framework</span></dt>
+        <dd>
+          <span>{{ arcTemplate.clientFramework }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.languages">Languages</span></dt>
+        <dd>
+          <span>{{ arcTemplate.languages }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.testFramework">Test Framework</span></dt>
+        <dd>
+          <span>{{ arcTemplate.testFramework }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.rentId">Rent Id</span></dt>
+        <dd>
+          <span>{{ arcTemplate.rentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ arcTemplate.updateTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcTemplate.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ arcTemplate.createTime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/arc-template', arcTemplate.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

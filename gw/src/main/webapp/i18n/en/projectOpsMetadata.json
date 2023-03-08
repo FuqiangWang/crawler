@@ -1,0 +1,32 @@
+{
+  "gwApp": {
+    "projectOpsMetadata": {
+      "home": {
+        "title": "Ops Metadata",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ops Metadata",
+        "createOrEditLabel": "Create or edit a Ops Metadata",
+        "notFound": "No Ops Metadata found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Ops Metadata {{ id }}?"
+      },
+      "detail": {
+        "title": "Ops Metadata"
+      },
+      "id": "ID",
+      "opsSystem": "Ops System",
+      "rentId": "Rent Id",
+      "createTime": "Create Time",
+      "updateTime": "Update Time",
+      "projectMetadata": "Project Metadata"
+    }
+  },
+  "projectApp": {
+    "projectOpsMetadata": {
+      "created": "A new Ops Metadata is created with identifier {{ param }}",
+      "updated": "A Ops Metadata is updated with identifier {{ param }}",
+      "deleted": "A Ops Metadata is deleted with identifier {{ param }}"
+    }
+  }
+}

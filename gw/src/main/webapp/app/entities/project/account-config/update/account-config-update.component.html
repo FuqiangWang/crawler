@@ -1,0 +1,118 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-account-config-heading"
+        data-cy="AccountConfigCreateUpdateHeading"
+        jhiTranslate="gwApp.projectAccountConfig.home.createOrEditLabel"
+      >
+        Create or edit a Account Config
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectAccountConfig.gitHubUser" for="field_gitHubUser">Git Hub User</label>
+          <input
+            type="text"
+            class="form-control"
+            name="gitHubUser"
+            id="field_gitHubUser"
+            data-cy="gitHubUser"
+            formControlName="gitHubUser"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectAccountConfig.gitHubPwd" for="field_gitHubPwd">Git Hub Pwd</label>
+          <input type="text" class="form-control" name="gitHubPwd" id="field_gitHubPwd" data-cy="gitHubPwd" formControlName="gitHubPwd" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectAccountConfig.gitLabUser" for="field_gitLabUser">Git Lab User</label>
+          <input
+            type="text"
+            class="form-control"
+            name="gitLabUser"
+            id="field_gitLabUser"
+            data-cy="gitLabUser"
+            formControlName="gitLabUser"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectAccountConfig.gitLabPwd" for="field_gitLabPwd">Git Lab Pwd</label>
+          <input type="text" class="form-control" name="gitLabPwd" id="field_gitLabPwd" data-cy="gitLabPwd" formControlName="gitLabPwd" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectAccountConfig.giteeUser" for="field_giteeUser">Gitee User</label>
+          <input type="text" class="form-control" name="giteeUser" id="field_giteeUser" data-cy="giteeUser" formControlName="giteeUser" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectAccountConfig.giteePwd" for="field_giteePwd">Gitee Pwd</label>
+          <input type="text" class="form-control" name="giteePwd" id="field_giteePwd" data-cy="giteePwd" formControlName="giteePwd" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectAccountConfig.dockerHubUser" for="field_dockerHubUser"
+            >Docker Hub User</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="dockerHubUser"
+            id="field_dockerHubUser"
+            data-cy="dockerHubUser"
+            formControlName="dockerHubUser"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectAccountConfig.dockHubPwd" for="field_dockHubPwd">Dock Hub Pwd</label>
+          <input
+            type="text"
+            class="form-control"
+            name="dockHubPwd"
+            id="field_dockHubPwd"
+            data-cy="dockHubPwd"
+            formControlName="dockHubPwd"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectAccountConfig.rendId" for="field_rendId">Rend Id</label>
+          <input type="text" class="form-control" name="rendId" id="field_rendId" data-cy="rendId" formControlName="rendId" />
+          <div *ngIf="editForm.get('rendId')!.invalid && (editForm.get('rendId')!.dirty || editForm.get('rendId')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('rendId')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

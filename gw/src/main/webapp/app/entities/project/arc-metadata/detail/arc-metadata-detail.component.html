@@ -1,0 +1,100 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="arcMetadata">
+      <h2 data-cy="arcMetadataDetailsHeading"><span jhiTranslate="gwApp.projectArcMetadata.detail.title">Arc Metadata</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ arcMetadata.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.type">Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'gwApp.ArcModelType.' + arcMetadata.type }}">{{ arcMetadata.type }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.packageName">Package Name</span></dt>
+        <dd>
+          <span>{{ arcMetadata.packageName }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.serviceDiscoveryType">Service Discovery Type</span></dt>
+        <dd>
+          <span>{{ arcMetadata.serviceDiscoveryType }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.devDatabaseType">Dev Database Type</span></dt>
+        <dd>
+          <span>{{ arcMetadata.devDatabaseType }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.prodDatabaseType">Prod Database Type</span></dt>
+        <dd>
+          <span>{{ arcMetadata.prodDatabaseType }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.cacheProvider">Cache Provider</span></dt>
+        <dd>
+          <span>{{ arcMetadata.cacheProvider }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.messageBroker">Message Broker</span></dt>
+        <dd>
+          <span>{{ arcMetadata.messageBroker }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.serverPort">Server Port</span></dt>
+        <dd>
+          <span>{{ arcMetadata.serverPort }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.frontMessage">Front Message</span></dt>
+        <dd>
+          <span>{{ arcMetadata.frontMessage }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.clientFramework">Client Framework</span></dt>
+        <dd>
+          <span>{{ arcMetadata.clientFramework }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.languages">Languages</span></dt>
+        <dd>
+          <span>{{ arcMetadata.languages }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.testFramework">Test Framework</span></dt>
+        <dd>
+          <span>{{ arcMetadata.testFramework }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.rentId">Rent Id</span></dt>
+        <dd>
+          <span>{{ arcMetadata.rentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ arcMetadata.updateTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ arcMetadata.createTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.projectMetadata">Project Metadata</span></dt>
+        <dd>
+          <div *ngIf="arcMetadata.projectMetadata">
+            <a [routerLink]="['/project-metadata', arcMetadata.projectMetadata.id, 'view']">{{ arcMetadata.projectMetadata.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectArcMetadata.arcTemplate">Arc Template</span></dt>
+        <dd>
+          <div *ngIf="arcMetadata.arcTemplate">
+            <a [routerLink]="['/arc-template', arcMetadata.arcTemplate.id, 'view']">{{ arcMetadata.arcTemplate.name }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/arc-metadata', arcMetadata.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

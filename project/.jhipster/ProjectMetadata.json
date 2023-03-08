@@ -1,0 +1,101 @@
+{
+  "applications": ["gw", "project"],
+  "changelogDate": "20230308082804",
+  "clientRootFolder": "project",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "project_metadata",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "ProjectType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "MONOLITH,MICROSERVICE"
+    },
+    {
+      "fieldName": "language",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "langVersion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "buildTool",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "buildToolVersion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "banner",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "favicon",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "rentId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updateTime",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "createTime",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "entities for Project mirco service",
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "project",
+  "name": "ProjectMetadata",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "arcMetadata",
+      "otherEntityRelationshipName": "projectMetadata",
+      "ownerSide": false,
+      "relationshipName": "arcMetadata",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "cicdMetadata",
+      "otherEntityRelationshipName": "projectMetadata",
+      "ownerSide": false,
+      "relationshipName": "cicdMetadata",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "opsMetadata",
+      "otherEntityRelationshipName": "projectMetadata",
+      "ownerSide": false,
+      "relationshipName": "opsMetadata",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

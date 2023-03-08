@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="opsMetadata">
+      <h2 data-cy="opsMetadataDetailsHeading"><span jhiTranslate="gwApp.projectOpsMetadata.detail.title">Ops Metadata</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ opsMetadata.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectOpsMetadata.opsSystem">Ops System</span></dt>
+        <dd>
+          <span>{{ opsMetadata.opsSystem }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectOpsMetadata.rentId">Rent Id</span></dt>
+        <dd>
+          <span>{{ opsMetadata.rentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectOpsMetadata.createTime">Create Time</span></dt>
+        <dd>
+          <span>{{ opsMetadata.createTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectOpsMetadata.updateTime">Update Time</span></dt>
+        <dd>
+          <span>{{ opsMetadata.updateTime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gwApp.projectOpsMetadata.projectMetadata">Project Metadata</span></dt>
+        <dd>
+          <div *ngIf="opsMetadata.projectMetadata">
+            <a [routerLink]="['/project-metadata', opsMetadata.projectMetadata.id, 'view']">{{ opsMetadata.projectMetadata.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ops-metadata', opsMetadata.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

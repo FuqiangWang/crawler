@@ -1,0 +1,186 @@
+<div>
+  <h2 id="page-heading" data-cy="ArcTemplateHeading">
+    <span jhiTranslate="gwApp.projectArcTemplate.home.title">Arc Templates</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="gwApp.projectArcTemplate.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-arc-template"
+        [routerLink]="['/arc-template/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="gwApp.projectArcTemplate.home.createLabel"> Create a new Arc Template </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="arcTemplates?.length === 0">
+    <span jhiTranslate="gwApp.projectArcTemplate.home.notFound">No Arc Templates found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="arcTemplates && arcTemplates.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="name">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.name">Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="packageName">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.packageName">Package Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="serviceDiscoveryType">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.serviceDiscoveryType">Service Discovery Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="devDatabaseType">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.devDatabaseType">Dev Database Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="prodDatabaseType">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.prodDatabaseType">Prod Database Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="cacheProvider">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.cacheProvider">Cache Provider</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="messageBroker">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.messageBroker">Message Broker</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="serverPort">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.serverPort">Server Port</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="frontMessage">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.frontMessage">Front Message</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="clientFramework">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.clientFramework">Client Framework</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="languages">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.languages">Languages</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="testFramework">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.testFramework">Test Framework</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="rentId">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.rentId">Rent Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateTime">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.updateTime">Update Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createTime">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectArcTemplate.createTime">Create Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let arcTemplate of arcTemplates; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/arc-template', arcTemplate.id, 'view']">{{ arcTemplate.id }}</a>
+          </td>
+          <td>{{ arcTemplate.name }}</td>
+          <td>{{ arcTemplate.packageName }}</td>
+          <td>{{ arcTemplate.serviceDiscoveryType }}</td>
+          <td>{{ arcTemplate.devDatabaseType }}</td>
+          <td>{{ arcTemplate.prodDatabaseType }}</td>
+          <td>{{ arcTemplate.cacheProvider }}</td>
+          <td>{{ arcTemplate.messageBroker }}</td>
+          <td>{{ arcTemplate.serverPort }}</td>
+          <td>{{ arcTemplate.frontMessage }}</td>
+          <td>{{ arcTemplate.clientFramework }}</td>
+          <td>{{ arcTemplate.languages }}</td>
+          <td>{{ arcTemplate.testFramework }}</td>
+          <td>{{ arcTemplate.rentId }}</td>
+          <td>{{ arcTemplate.updateTime }}</td>
+          <td>{{ arcTemplate.createTime }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/arc-template', arcTemplate.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/arc-template', arcTemplate.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(arcTemplate)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

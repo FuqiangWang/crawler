@@ -1,0 +1,42 @@
+{
+  "gwApp": {
+    "projectProjectMetadata": {
+      "home": {
+        "title": "Project Metadata",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Project Metadata",
+        "createOrEditLabel": "Create or edit a Project Metadata",
+        "notFound": "No Project Metadata found"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Project Metadata {{ id }}?"
+      },
+      "detail": {
+        "title": "Project Metadata"
+      },
+      "id": "ID",
+      "name": "Name",
+      "type": "Type",
+      "language": "Language",
+      "langVersion": "Lang Version",
+      "buildTool": "Build Tool",
+      "buildToolVersion": "Build Tool Version",
+      "banner": "Banner",
+      "favicon": "Favicon",
+      "version": "Version",
+      "rentId": "Rent Id",
+      "updateTime": "Update Time",
+      "createTime": "Create Time",
+      "arcMetadata": "Arc Metadata",
+      "cicdMetadata": "Cicd Metadata",
+      "opsMetadata": "Ops Metadata"
+    }
+  },
+  "projectApp": {
+    "projectProjectMetadata": {
+      "created": "A new Project Metadata is created with identifier {{ param }}",
+      "updated": "A Project Metadata is updated with identifier {{ param }}",
+      "deleted": "A Project Metadata is deleted with identifier {{ param }}"
+    }
+  }
+}

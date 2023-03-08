@@ -1,0 +1,258 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-arc-template-heading"
+        data-cy="ArcTemplateCreateUpdateHeading"
+        jhiTranslate="gwApp.projectArcTemplate.home.createOrEditLabel"
+      >
+        Create or edit a Arc Template
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.packageName" for="field_packageName">Package Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="packageName"
+            id="field_packageName"
+            data-cy="packageName"
+            formControlName="packageName"
+          />
+          <div *ngIf="editForm.get('packageName')!.invalid && (editForm.get('packageName')!.dirty || editForm.get('packageName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('packageName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.serviceDiscoveryType" for="field_serviceDiscoveryType"
+            >Service Discovery Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="serviceDiscoveryType"
+            id="field_serviceDiscoveryType"
+            data-cy="serviceDiscoveryType"
+            formControlName="serviceDiscoveryType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.devDatabaseType" for="field_devDatabaseType"
+            >Dev Database Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="devDatabaseType"
+            id="field_devDatabaseType"
+            data-cy="devDatabaseType"
+            formControlName="devDatabaseType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.prodDatabaseType" for="field_prodDatabaseType"
+            >Prod Database Type</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="prodDatabaseType"
+            id="field_prodDatabaseType"
+            data-cy="prodDatabaseType"
+            formControlName="prodDatabaseType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.cacheProvider" for="field_cacheProvider">Cache Provider</label>
+          <input
+            type="text"
+            class="form-control"
+            name="cacheProvider"
+            id="field_cacheProvider"
+            data-cy="cacheProvider"
+            formControlName="cacheProvider"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.messageBroker" for="field_messageBroker">Message Broker</label>
+          <input
+            type="text"
+            class="form-control"
+            name="messageBroker"
+            id="field_messageBroker"
+            data-cy="messageBroker"
+            formControlName="messageBroker"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.serverPort" for="field_serverPort">Server Port</label>
+          <input
+            type="number"
+            class="form-control"
+            name="serverPort"
+            id="field_serverPort"
+            data-cy="serverPort"
+            formControlName="serverPort"
+          />
+          <div *ngIf="editForm.get('serverPort')!.invalid && (editForm.get('serverPort')!.dirty || editForm.get('serverPort')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('serverPort')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('serverPort')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.frontMessage" for="field_frontMessage">Front Message</label>
+          <input
+            type="text"
+            class="form-control"
+            name="frontMessage"
+            id="field_frontMessage"
+            data-cy="frontMessage"
+            formControlName="frontMessage"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.clientFramework" for="field_clientFramework"
+            >Client Framework</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="clientFramework"
+            id="field_clientFramework"
+            data-cy="clientFramework"
+            formControlName="clientFramework"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.languages" for="field_languages">Languages</label>
+          <input type="text" class="form-control" name="languages" id="field_languages" data-cy="languages" formControlName="languages" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.testFramework" for="field_testFramework">Test Framework</label>
+          <input
+            type="text"
+            class="form-control"
+            name="testFramework"
+            id="field_testFramework"
+            data-cy="testFramework"
+            formControlName="testFramework"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.rentId" for="field_rentId">Rent Id</label>
+          <input type="text" class="form-control" name="rentId" id="field_rentId" data-cy="rentId" formControlName="rentId" />
+          <div *ngIf="editForm.get('rentId')!.invalid && (editForm.get('rentId')!.dirty || editForm.get('rentId')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('rentId')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.updateTime" for="field_updateTime">Update Time</label>
+          <input
+            type="text"
+            class="form-control"
+            name="updateTime"
+            id="field_updateTime"
+            data-cy="updateTime"
+            formControlName="updateTime"
+          />
+          <div *ngIf="editForm.get('updateTime')!.invalid && (editForm.get('updateTime')!.dirty || editForm.get('updateTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('updateTime')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gwApp.projectArcTemplate.createTime" for="field_createTime">Create Time</label>
+          <input
+            type="text"
+            class="form-control"
+            name="createTime"
+            id="field_createTime"
+            data-cy="createTime"
+            formControlName="createTime"
+          />
+          <div *ngIf="editForm.get('createTime')!.invalid && (editForm.get('createTime')!.dirty || editForm.get('createTime')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('createTime')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

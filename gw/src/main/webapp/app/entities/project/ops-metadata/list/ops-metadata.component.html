@@ -1,0 +1,120 @@
+<div>
+  <h2 id="page-heading" data-cy="OpsMetadataHeading">
+    <span jhiTranslate="gwApp.projectOpsMetadata.home.title">Ops Metadata</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="gwApp.projectOpsMetadata.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-ops-metadata"
+        [routerLink]="['/ops-metadata/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="gwApp.projectOpsMetadata.home.createLabel"> Create a new Ops Metadata </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="opsMetadata?.length === 0">
+    <span jhiTranslate="gwApp.projectOpsMetadata.home.notFound">No Ops Metadata found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="opsMetadata && opsMetadata.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="opsSystem">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectOpsMetadata.opsSystem">Ops System</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="rentId">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectOpsMetadata.rentId">Rent Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createTime">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectOpsMetadata.createTime">Create Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="updateTime">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectOpsMetadata.updateTime">Update Time</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="projectMetadata.id">
+            <div class="d-flex">
+              <span jhiTranslate="gwApp.projectOpsMetadata.projectMetadata">Project Metadata</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let opsMetadata of opsMetadata; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/ops-metadata', opsMetadata.id, 'view']">{{ opsMetadata.id }}</a>
+          </td>
+          <td>{{ opsMetadata.opsSystem }}</td>
+          <td>{{ opsMetadata.rentId }}</td>
+          <td>{{ opsMetadata.createTime }}</td>
+          <td>{{ opsMetadata.updateTime }}</td>
+          <td>
+            <div *ngIf="opsMetadata.projectMetadata">
+              <a [routerLink]="['/project-metadata', opsMetadata.projectMetadata.id, 'view']">{{ opsMetadata.projectMetadata.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/ops-metadata', opsMetadata.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/ops-metadata', opsMetadata.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(opsMetadata)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

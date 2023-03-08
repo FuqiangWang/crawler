@@ -1,0 +1,9 @@
+{
+  "gwApp": {
+    "CdType": {
+      "null": "",
+      "AUTO": "AUTO",
+      "MANUAL": "MANUAL"
+    }
+  }
+}
