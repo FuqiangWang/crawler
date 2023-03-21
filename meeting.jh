@@ -1,0 +1,76 @@
+application {
+    config {
+        baseName meetingmanager
+        applicationType microservice
+        authenticationType oauth2
+        packageName com.huawei.meeting
+        buildTool maven
+        prodDatabaseType mariadb
+        serviceDiscoveryType eureka
+        cacheProvider caffeine
+        clientFramework react
+        clientPackageManager npm
+        messageBroker mqtt
+        databaseType sql
+        devDatabaseType mariadb
+        dtoSuffix Dto
+        languages [zh-cn, en]
+        prodDatabaseType mariadb
+        reactive false
+        serverPort 8668
+    }
+
+    entities *
+}
+
+/**
+* 会议室
+*/
+entity MeetingRoom
+    (
+    meeting_room
+    ) {
+    id Long
+    name String required minlength(1) maxlength(32) pattern(/[A-Za-z0-9\-_]+/)
+    location String required minlength(1) maxlength(255)
+    status String
+    smokingAllowed Boolean /** 是否允许吸烟 */
+    permittedUsage Boolean
+    numberOfAttendee Integer
+    devices String
+    numberOfRooms Integer
+    numberOfBathrooms Integer
+    numberOfDinningRooms Integer
+    administrator String
+}
+
+entity MeetingSchedule
+    (
+    meeting_schedule
+    ) {
+    id Long
+    startDate LocalDate
+    endData LocalDate
+    dayOfWeek String
+    startTime LocalDate
+    endTime LocalDate
+    reservationStaff String
+}
+
+entity MeetingTopic {
+    id String
+    sequenceNum Integer
+    topic String
+    meetingScheduleId Long
+}
+
+relationship OneToMany {
+    MeetingRoom{schedule} to MeetingSchedule
+    MeetingSchedule{imeetingTopicd} to MeetingTopic
+}
+
+
+
+dto * with mapstruct except MeetingTopic
+service * with serviceClass except MeetingTopic
+paginate * with pagination except MeetingTopic
